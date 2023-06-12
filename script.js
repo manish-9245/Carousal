@@ -1,30 +1,25 @@
 const wrapper = document.querySelector('.wrapper');
 const images = wrapper.querySelectorAll('img');
 
-let isTransitioning = false;
+const firstImage = images[0];
+const lastImage = images[images.length - 1];
 
-// Clone the first image and append it to the end
-const firstImage = images[0].cloneNode(true);
-wrapper.appendChild(firstImage);
+// Clone the first and last images
+const clonedFirstImage = firstImage.cloneNode(true);
+const clonedLastImage = lastImage.cloneNode(true);
+
+// Append the cloned images before/after the original images
+wrapper.insertBefore(clonedLastImage, firstImage);
+wrapper.appendChild(clonedFirstImage);
 
 wrapper.addEventListener('scroll', () => {
-  if (isTransitioning) return;
-
   const scrollWidth = wrapper.scrollWidth;
   const scrollLeft = wrapper.scrollLeft;
   const clientWidth = wrapper.clientWidth;
-  
-  if (scrollLeft === scrollWidth - clientWidth) {
-    isTransitioning = true;
 
-    wrapper.style.scrollBehavior = 'auto';
-    wrapper.scrollLeft = 0;
-
-    setTimeout(() => {
-      wrapper.style.scrollBehavior = 'smooth';
-      wrapper.appendChild(images[0].cloneNode(true));
-      images[0].remove();
-      isTransitioning = false;
-    }, 100);
+  if (scrollLeft === 0) {
+    wrapper.scrollLeft = scrollWidth - 2 * clientWidth;
+  } else if (scrollLeft === scrollWidth - clientWidth) {
+    wrapper.scrollLeft = clientWidth;
   }
 });
