@@ -1,6 +1,6 @@
 const wrapper = document.querySelector('.wrapper');
 const images = wrapper.querySelectorAll('img');
-const cloneCount = 3; // Number of clones to pre-render
+const cloneCount = 6; // Number of clones to pre-render
 
 // Initial clones
 for (let i = 0; i < cloneCount; i++) {
