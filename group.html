@@ -8,6 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 20px;
         }
 
         h1 {
@@ -51,7 +52,7 @@
     <h1>Random Group Generator</h1>
     <div class="input-container">
         <label for="names">Enter Names (comma-separated):</label>
-        <input type="text" id="names" placeholder="John, Jane, Alice, Bob" />
+        <input type="text" id="names" placeholder="John, Jane, Alice, Bob, Carol, David" />
     </div>
     <div class="input-container">
         <label for="groups">Number of Groups:</label>
@@ -60,52 +61,46 @@
     <button id="generate">Generate Groups</button>
     <div id="result" class="result-container"></div>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const generateButton = document.getElementById('generate');
-            generateButton.addEventListener('click', generateGroups);
-        });
+        document.getElementById('generate').addEventListener('click', function () {
+            const namesInput = document.getElementById('names').value;
+            const groupsInput = parseInt(document.getElementById('groups').value);
 
-        function generateGroups() {
-            const namesInput = document.getElementById('names');
-            const groupsInput = document.getElementById('groups');
-            const resultContainer = document.getElementById('result');
-
-            const names = namesInput.value.split(',').map(name => name.trim());
-            const numberOfGroups = parseInt(groupsInput.value);
-
-            if (isNaN(numberOfGroups) || numberOfGroups <= 0) {
+            if (isNaN(groupsInput) || groupsInput < 1) {
                 alert('Please enter a valid number of groups (greater than 0).');
                 return;
             }
 
-            if (names.length === 0) {
-                alert('Please enter at least one name.');
+            const names = namesInput.split(',').map(name => name.trim());
+
+            if (names.length < groupsInput) {
+                alert('There are not enough names to form the specified number of groups.');
                 return;
             }
 
             // Shuffle the names randomly
             shuffleArray(names);
 
-            // Calculate the approximate size of each group
-            const groupSize = Math.ceil(names.length / numberOfGroups);
+            // Initialize groups with empty arrays
+            const groups = new Array(groupsInput).fill().map(() => []);
 
-            // Divide the names into groups
-            const groups = [];
-            for (let i = 0; i < numberOfGroups; i++) {
-                const start = i * groupSize;
-                const end = (i + 1) * groupSize;
-                groups.push(names.slice(start, end));
-            }
+            // Distribute names evenly among groups
+            let currentIndex = 0;
+            names.forEach(name => {
+                groups[currentIndex].push(name);
+                currentIndex = (currentIndex + 1) % groupsInput;
+            });
 
             // Display the result
+            const resultContainer = document.getElementById('result');
             resultContainer.innerHTML = '';
+
             groups.forEach((group, index) => {
                 const groupDiv = document.createElement('div');
                 groupDiv.classList.add('group');
                 groupDiv.innerHTML = `<strong>Group ${index + 1}:</strong> ${group.join(', ')}`;
                 resultContainer.appendChild(groupDiv);
             });
-        }
+        });
 
         // Fisher-Yates Shuffle Algorithm
         function shuffleArray(array) {
