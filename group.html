@@ -51,8 +51,8 @@
 <body>
     <h1>Random Group Generator</h1>
     <div class="input-container">
-        <label for="names">Enter Names (comma-separated):</label>
-        <input type="text" id="names" placeholder="John, Jane, Alice, Bob, Carol, David" />
+        <label for="names">Enter Names (semicolon-separated):</label>
+        <input type="text" id="names" placeholder="John; Jane; Alice; Bob; Carol; David" />
     </div>
     <div class="input-container">
         <label for="groups">Number of Groups:</label>
@@ -70,7 +70,7 @@
                 return;
             }
 
-            const names = namesInput.split(',').map(name => name.trim());
+            const names = namesInput.split(';').map(name => name.trim());
 
             if (names.length < groupsInput) {
                 alert('There are not enough names to form the specified number of groups.');
