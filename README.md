@@ -1,22 +1,17 @@
 # Carousal
-Subject: "No EAW Activity for Prime Finance Bangalore?"
-
-Body:
-
-Picture this: a world of utter chaos, where shadows beg for secrets, borrow enigmatic whispers, and steal glimpses into the unknown. The stakes are high, and you navigate the fine line between strategy and mayhem, where creativity is your currency, and cunning is your compass.
-
-Greetings PFTians,
-
-We've been cooking up something truly special, something that will leave you all in delightful disbelief. So, don’t jump the gun just yet, as we do have something coming up in just a day's time.
-
-But here's the twist – we're not going to reveal it just yet.
-Because, where's the fun in that?!
-
-For now, all we can say is that you won't want to miss what's coming. Keep your curiosity piqued and your calendars open to see what’s headed your way.
-
-Venue: EGL Central Garden
-
-Stay tuned…
-
-Regards,
-PFT SEPs
+a packet of cream biscuits with the cream licked away
+id cards of 3 employees with the same name
+a dolo 250
+A "Caution: wet floor" sign
+A bus ticket
+An empty refill of a ballpoint pen
+a foreign currency not
+video of 2 players doing a tt rally of 20 with their left hand
+photo of 2 people of the same team in front of a fountain making a heart with their hands (taj mahal pose)
+A TM taking a picture of another TM taking a picture of another TM taking a picture of another TM taking a picture of a flower
+The full team jumping in the air. All must be off the ground
+The full team sharing one soda/coffee/any drink (everyone drinking from their own straw)
+A TM standing next to a Mercedes Benz car
+A handkerchief with at least 3 colors,
+A socks with a hole
+these are some that I think are decent...can alter them as well and add more
